@@ -19,6 +19,10 @@ The final screen reveals the users score and gives them an option to save their 
 
 1. Clone this repository:
 
+2. Make any changes you wan to the questions etc.
+
+3. Then click "Open with live browser" on index.html and try it out - or visit the "deployed application" section of this readme to see 
+
 
 ## System/Software requirements
 
@@ -26,7 +30,7 @@ A web browser with the to view and test the application as deployed on GitHub Pa
 
 ## Deployed Application
 
-![Getting Started](./assets/Screen%20Shot%202023-05-11%20at%2010.10.07%20PM.png)
+https://chawscoding.github.io/js-dev-trivia/
 
 ## Future Updates
 
