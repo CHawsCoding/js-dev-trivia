@@ -5,8 +5,10 @@ const answerButtonsElement = document.getElementById("answer-buttons");
 const endScreenElement = document.getElementById("end-screen");
 const initialsInputElement = document.getElementById("initials");
 const saveScoreButton = document.getElementById("save-score-btn");
+const timerDisplay = document.getElementById("timer-display");
 
-let currentQuestionIndex;
+let shuffledQuestions, currentQuestionIndex;
+let correctAnswersCount = 0;
 let timerValue = 60;
 let timer;
 
@@ -20,6 +22,15 @@ function startGame() {
 
   timer = setInterval(function () {
     timerValue--;
+    timerDisplay.innerText = `Time left: ${timerValue}s`; // Update the display
+
+    if (timerValue < 10) {
+      // Add this block to change text color for urgency
+      timerDisplay.style.color = "red";
+    } else {
+      timerDisplay.style.color = "black";
+    }
+
     if (timerValue <= 0) {
       clearInterval(timer);
       endGame();
@@ -69,12 +80,32 @@ function selectAnswer(e) {
 
 function endGame() {
   questionContainerElement.setAttribute("hidden", true);
+  document.getElementById(
+    "end-screen"
+  ).innerHTML += `<p>Your Score: ${timerValue}</p>`;
   endScreenElement.removeAttribute("hidden");
 }
 
 saveScoreButton.addEventListener("click", function () {
-  const initials = initialsInputElement.value;
+  console.log("Button clicked!");
+  const initials = initialsInputElement.value.trim();
+  console.log("Initials entered:", initials);
   const score = timerValue;
 
-  console.log(initials, score);
+  console.log("Saving score:", initials, score);
+
+  if (initials && initials.length > 0) {
+    let highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+    highScores.push({ initials, score });
+
+    highScores = highScores.sort((a, b) => b.score - a.score).slice(0, 10);
+    localStorage.setItem("highScores", JSON.stringify(highScores));
+    console.log("Scores saved:", JSON.parse(localStorage.getItem("highScores")));
+
+  }
+});
+
+const highScoresButton = document.getElementById("high-scores-btn");
+highScoresButton.addEventListener("click", function () {
+  window.location.href = "highscores.html";
 });

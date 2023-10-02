@@ -15,10 +15,10 @@ let questions = [
     numb: 3,
     question:
       "What is the correct syntax for creating a variable in Javascript?",
-    answer: "var myVariable;",
+    answer: "var myVariable =;",
     options: [
       "var = myVariable;",
-      "var myVariable;",
+      "var myVariable =;",
       "let myVariable",
       "variable = myVariable;",
     ],

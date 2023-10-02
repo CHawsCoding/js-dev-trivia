@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Coding Quiz</title>
-    <link rel="stylesheet" href="./styles/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <div id="timer-display">Time left: 60s</div>
     <div id="quiz-container">
-        <button id="start-btn">Start Quiz</button>
-        <button id="high-scores-btn">High Scores</button>
-        <div id="question-container" hidden>
-            <div id="question">Question here...</div>
-            <div id="answer-buttons"></div>
-        </div>
-        <div id="end-screen" hidden>
-            <div>Game Over</div>
-            <input type="text" id="initials" placeholder="Enter Initials">
-            <button id="save-score-btn">Save Score</button>
-        </div>
+      <button id="start-btn">Start Quiz</button>
+      <button id="high-scores-btn">High Scores</button>
+      <div id="question-container" hidden>
+        <div id="question">Question here...</div>
+        <div id="answer-buttons"></div>
+      </div>
+      <div id="end-screen" hidden>
+        <div>Game Over</div>
+        <input type="text" id="initials" placeholder="Enter Initials" />
+        <button id="save-score-btn">Save Score</button>
+      </div>
     </div>
-    <script src="./scripts/script.js"></script>
     <script src="./scripts/questions.js"></script>
-</body>
+    <script src="./scripts/script.js"></script>
+  </body>
 </html>
